@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy More Save More</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: #fff;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        max-width: 480px;
+        width: 100%;
+      }
+
+      h2 {
+        text-align: center;
+        color: #ff5e8e;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+      }
+
+      .card {
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 10px;
+        position: relative;
+      }
+
+      .card input[type="radio"] {
+        margin-top: 6px;
+        transform: scale(1.2);
+      }
+
+      .details {
+        flex: 1;
+      }
+
+      .details span {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .details p {
+        font-size: 0.85rem;
+        margin: 0;
+      }
+
+      .tag {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin-left: 8px;
+        color: white;
+      }
+
+      .red {
+        background: red;
+      }
+      .pink {
+        background: #ff5e8e;
+      }
+      .green {
+        background: #2ecc71;
+      }
+
+      .price {
+        text-align: right;
+      }
+
+      .price span {
+        font-weight: bold;
+        font-size: 1.1rem;
+        display: block;
+      }
+
+      .price s {
+        font-size: 0.8rem;
+        color: gray;
+      }
+
+      .popular {
+        border: 2px solid #ff5e8e;
+        position: relative;
+      }
+
+      .popular-tag {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: #ff5e8e;
+        color: white;
+        font-size: 0.7rem;
+        padding: 3px 8px;
+        border-radius: 10px;
+      }
+
+      .selectors {
+        margin-top: 10px;
+      }
+
+      .selectors div {
+        margin-bottom: 8px;
+      }
+
+      .selectors select {
+        margin: 0 5px;
+        padding: 4px;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+      }
+
+      .delivery {
+        color: #ff5e8e;
+      }
+
+      .add-to-cart {
+        width: 100%;
+        background: #2ecc71;
+        color: white;
+        padding: 12px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .add-to-cart:hover {
+        background: #27ae60;
+      }
+
+      .selected {
+        box-shadow: 0 0 10px rgba(255, 94, 142, 0.5);
+      }
+
+      @media screen and (max-width: 600px) {
+        .card {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .price {
+          text-align: left;
+          margin-top: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Buy More Save More!</h2>
+
+      <!-- 1 Unit -->
+      <div class="card selected">
+        <input type="radio" name="unit" value="18" data-units="1" checked />
+        <div class="details">
+          <span>1 Unit <span class="tag red">5% Off</span></span>
+          <p>Standard Price</p>
+        </div>
+        <div class="price">
+          <span>$18.00 USD</span>
+          <s>$20.00 USD</s>
+        </div>
+      </div>
+
+      <!-- 2 Units -->
+      <div class="card popular">
+        <input type="radio" name="unit" value="30" data-units="2" />
+        <div class="popular-tag">MOST POPULAR</div>
+        <div class="details">
+          <span>2 Units <span class="tag pink">15% Off</span></span>
+          <div class="selectors">
+            <div>
+              <label>#1</label>
+              <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+              <select>
+                <option>Black</option>
+                <option>White</option>
+              </select>
+            </div>
+            <div>
+              <label>#2</label>
+              <select>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+              </select>
+              <select>
+                <option>Red</option>
+                <option>Blue</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="price">
+          <span>$30.00 USD</span>
+          <s>$35.00 USD</s>
+        </div>
+      </div>
+
+      <!-- 3 Units -->
+      <div class="card">
+        <input type="radio" name="unit" value="40" data-units="3" />
+        <div class="details">
+          <span>3 Units <span class="tag green">25% Off</span></span>
+        </div>
+        <div class="price">
+          <span>$40.00 USD</span>
+          <s>$50.00 USD</s>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p class="delivery">Free Delivery</p>
+        <p class="total">Total : <strong id="totalPrice">$18.00 USD</strong></p>
+      </div>
+
+      <button class="add-to-cart" id="addCart">+ Add to Cart</button>
+    </div>
+
+    <script>
+      const radios = document.querySelectorAll(
+        'input[type="radio"][name="unit"]'
+      );
+      const totalPrice = document.getElementById("totalPrice");
+      const addToCartBtn = document.getElementById("addCart");
+
+      function updatePrice(radio) {
+        totalPrice.textContent = `$${parseFloat(radio.value).toFixed(2)} USD`;
+        document
+          .querySelectorAll(".card")
+          .forEach((card) => card.classList.remove("selected"));
+        radio.closest(".card").classList.add("selected");
+      }
+
+      radios.forEach((radio) => {
+        radio.addEventListener("change", () => {
+          updatePrice(radio);
+        });
+      });
+
+      addToCartBtn.addEventListener("click", () => {
+        const selected = document.querySelector('input[name="unit"]:checked');
+        const units = selected.getAttribute("data-units");
+        const amount = selected.value;
+        alert(`✅ Added ${units} unit(s) to cart for $${amount} USD`);
+        addToCartBtn.textContent = "✔ Added!";
+        addToCartBtn.style.backgroundColor = "#16a085";
+      });
+    </script>
+  </body>
+</html>
