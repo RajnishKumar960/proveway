@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: #fff;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 480px;
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+  color: #ff5e8e;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+}
+
+.card input[type="radio"] {
+  margin-top: 6px;
+  transform: scale(1.2);
+}
+
+.details {
+  flex: 1;
+}
+
+.details span {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.details p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.tag {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  color: white;
+}
+
+.red {
+  background: red;
+}
+.pink {
+  background: #ff5e8e;
+}
+.green {
+  background: #2ecc71;
+}
+
+.price {
+  text-align: right;
+}
+
+.price span {
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: block;
+}
+
+.price s {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.popular {
+  border: 2px solid #ff5e8e;
+  position: relative;
+}
+
+.popular-tag {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #ff5e8e;
+  color: white;
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.selectors {
+  margin-top: 10px;
+}
+
+.selectors div {
+  margin-bottom: 8px;
+}
+
+.selectors select {
+  margin: 0 5px;
+  padding: 4px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.delivery {
+  color: #ff5e8e;
+}
+
+.add-to-cart {
+  width: 100%;
+  background: #2ecc71;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background: #27ae60;
+}
+
+.selected {
+  box-shadow: 0 0 10px rgba(255, 94, 142, 0.5);
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .price {
+    text-align: left;
+    margin-top: 8px;
+  }
+}
